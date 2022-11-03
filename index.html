@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mario Bros NFTs</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+   
+    <link rel="apple-touch-icon" sizes="180x180" href="images/x-icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/x-icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/x-icon/favicon-16x16.png">
+    <link rel="manifest" href="images/x-icon/site.webmanifest">
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      body{
+        background-image: url("images/bg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: scroll;
+        overflow-x: hidden;
+        cursor: url('images/bulletbillpointer.png'),auto;
+      }
+    div {  
+      width: auto;  
+      text-align: center;  
+      }  
+      img {  
+      max-width: 300%;  
+      height: auto;  
+      }  
+      .hidden {
+        display: none;
+      }
+    </style> 
+
+  </head>
+  <body>
+
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <img src="images/x-icon/favicon-32x32.png" alt="logo" />
+          </a>
+        </div>
+
+        <a href="https://medium.com/@mariobrosnft/how-i-recreated-1985s-super-mario-bros-as-an-nft-collection-d56cd99f13db">
+          <button class="test1">Learn More</button>
+        </a>
+
+        <div class="menu">
+          <!-- <a
+            href="https://discord.gg/TZR4rDgY7p"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="images/header/discord.webp" alt="Discord" />
+          </a> -->
+ <!--          <a
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="images/header/twitter.webp" alt="Twitter" />
+          </a> -->
+          <a
+            href="https://opensea.io/collection/etharcade"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="images/header/opensea.webp" alt="Opensea" />
+          </a>
+          <a
+          href="https://etherscan.io/address/0x70a466bc212a0a4298bca56195290242ebc61b18"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="images/header/etherscan.ico" alt="Etherscan" />
+        </a>
+          <button class="wallet-btn btn" id="connectWallet">
+            <span>Connect Wallet</span>
+          </button>
+        </div>
+      </div>
+
+    </header>
+
+    <div id="animate">
+      <img src="images/shyguy.png" id="animateImg1" alt="ShyGuy" width="250" height="250">
+    </div>
+    <h1>&nbsp;</h1>
+
+    <h id="mintedCounter" style="text-align: center">
+      <!-- 10/10000 minted -->
+    </h>
+
+    <div>
+      <video id="movie" controls autoplay muted style="object-fit: fill;">
+        <source src="movie.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div id="animate2">
+      <img src="images/mario.png" id="animateImg2" alt="Mario" width="130" height="130">
+    </div>
+
+    <div id="animate3">
+      <img src="images/peach1.png" id="peach" width="1" height="1">
+    </div>
+    <div id="animate4">
+      <img src="images/yoshi.gif" id="yoshi" width="220" height="220">
+    </div>
+
+    <section class="container" id="mintWindow">
+      <div class="owner-status"></div>
+      <div class="countdown">
+        <ul      
+          id="countdown"
+          class="count-down"
+          data-date="July 16, 2022 09:00:00 PM UTC"
+        >
+          <li class="clock-item">
+            <span class="count-number days">20</span>
+            <p class="count-text">Days</p>
+          </li>
+
+          <li class="clock-item">
+            <span class="count-number hours">20</span>
+            <p class="count-text">Hour</p>
+          </li>
+
+          <li class="clock-item">
+            <span class="count-number minutes">20</span>
+            <p class="count-text">Min</p>
+          </li>
+
+          <li class="clock-item">
+            <span class="count-number seconds">20</span>
+            <p class="count-text">Sec</p>
+          </li>
+        </ul>
+
+        <div class="total-price-container">
+          <!-- <h3>Total</h3> -->
+          <p id="totalPrice" style="font-size: 30px">.01 ETH</p>
+        </div>
+
+            <span>
+              <button class="input-number-decrement btn" id="mintDecrement">–</button>
+              <input
+                id="mintInput"
+                class="input-number btn"
+                type="number"
+                value="1"
+                min="1"
+                max="20"
+              />
+              <button class="input-number-increment btn" id="mintIncrement">+</button>
+            </span>
+            <button id="setQtyMax" class="btn">SET MAX</button>
+          </div>
+          <button id="mintButton" class="hero-btn btn mint-btn">Mint</button> 
+      </div>
+      </div>
+      <div class="minted-container card show-card hidden">
+        <h1>🎉</h1>
+        <h2>Minted!</h2>
+        <p>Here's your trasaction link:</p>
+        <a id="mintedTxnBtn" href="" target="_blank" rel="noopener noreferrer">
+          <button class="hero-btn btn">View Transaction</button>
+        </a>
+        <p>View it in the collection:</p>
+        <a
+          id="mintedLinkBtn"
+          href="https://opensea.io/collection/beetle-games"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button class="hero-btn btn">View Collection</button>
+        </a>
+      </div>
+      <h1>&nbsp;</h1>
+
+    </section>  
+    <h1>&nbsp;</h1>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+    <script src="js/metamask-onboarding.bundle.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/splide.min.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@metamask/onboarding@1.0.1/dist/metamask-onboarding.bundle.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+    </script>
+    <script>
+
+   
+    var d = document.getElementById('movie');
+    console.log(document.body.clientWidth, document.body.clientHeight)
+    d.width = document.body.clientWidth*.33
+    d.height = document.body.clientHeight*.50
+
+    var d = document.getElementById('animate');
+    d.style.position = "absolute";
+    d.style.left = -document.body.clientWidth*.15+'px';
+    d.style.top = document.body.clientHeight*.08+'px';
+
+    var d = document.getElementById('animateImg1');
+    d.width = document.body.clientWidth*.13
+
+    var d = document.getElementById('animateImg2');
+
+    d.width = document.body.clientWidth*.08
+    d.height = document.body.clientHeight*.12
+
+    
+    var d = document.getElementById('yoshi');
+    d.width = document.body.clientWidth*.12
+    d.height = document.body.clientHeight*.5
+    
+    for(i=0; i<1000; i+=1) {
+        $(document).ready(function(e) {
+            var width = "+=" + $(document).width() *1.2;
+            $("#animate").animate({
+            left: width
+          }, 8000, function() {
+            // Animation complete.
+          });
+        });
+            
+        $(document).ready(function(e) {
+            var width = "-=" + $(document).width() *1.2;
+            $("#animate").animate({
+            left: width
+          }, 0, function() {
+            // Animation complete.
+          });
+        });
+      }
+    </script>
+    <script>
+      var d = document.getElementById('animate2');
+      d.style.position = "absolute";
+      d.style.left = document.body.clientWidth*.11+'px';
+      d.style.top = document.body.clientWidth*.1+'px';
+
+      for(i=0; i<1000; i+=1) {
+        $(document).ready(function(e) {
+              var height = "+=" + document.body.clientWidth*.3;
+              $("#animate2").animate({
+              top: height
+            }, 4000, function() {
+              // Animation complete.
+            });
+          });
+        $(document).ready(function(e) {
+              var height = "+=" + 0;
+              $("#animate2").animate({
+              top: height
+            }, 9000, function() {
+              // Animation complete.
+            });
+          });
+        $(document).ready(function(e) {
+              var height = "-=" + document.body.clientWidth*.3;
+              $("#animate2").animate({
+              top: height
+            }, 0, function() {
+              // Animation complete.
+            });
+          });
+        }
+    </script>
+        <script>
+        var d = document.getElementById('animate3');
+        d.style.position = "absolute";
+        d.style.left = document.body.clientWidth*.35+'px';
+        d.style.top = document.body.clientHeight*.88+'px';
+        
+          setTimeout(() => {
+            document.getElementById("peach").width = document.body.clientWidth*.14;
+            document.getElementById("peach").height = document.body.clientHeight*.15;
+            for(i=0; i<1000; i+=1) {
+              $(document).ready(function(e) {
+                  var width = "-=" + 50;
+                  $("#animate3").animate({
+                  left: width
+                }, 3000, function() {
+                  // Animation complete.
+                });
+                });
+              $(document).ready(function(e) {
+                  var width = "+=" + 0;
+                  $("#animate3").animate({
+                  left: width
+                }, 9000, function() {
+                  // Animation complete.
+                  document.getElementById("peach").src = "images/peach2.png";
+                });
+                });
+              $(document).ready(function(e) {
+                  var width = "+=" + 50;
+                  $("#animate3").animate({
+                  left: width
+                }, 3000, function() {
+                  // Animation complete.
+                });
+                });
+              $(document).ready(function(e) {
+                  var width = "+=" + 5000;
+                  $("#animate3").animate({
+                  left: width
+                }, 0, function() {
+                  // Animation complete.
+                  document.getElementById("peach").src = "images/peach1.png";
+                });
+                });
+              $(document).ready(function(e) {
+                  var width = "+=" + 0;
+                  $("#animate3").animate({
+                  left: width
+                }, 15000, function() {
+                  // Animation complete.
+                });
+                });
+              $(document).ready(function(e) {
+                  var width = "-=" + 5000;
+                  $("#animate3").animate({
+                  left: width
+                }, 0, function() {
+                  // Animation complete.
+                });
+                });
+              }
+            }, 7000)
+        </script>
+        <script>
+            var d = document.getElementById('animate4');
+            d.style.position = "absolute";
+            d.style.left = document.body.clientWidth*.81+'px';
+            d.style.top = document.body.clientHeight*.48+'px';
+        </script>
+  </body>
+</html>
