@@ -248,3 +248,7 @@ p {
 .fullWrapper {
   cursor:url('https://raw.githubusercontent.com/CopeBears/testupload/main/bulletbillsmall-removebg-preview.png');
 }
+
+.mintedCounter {
+  font-size: 60px;
+}

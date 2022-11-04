@@ -1404,6 +1404,7 @@ require(to != address(0), "ERC721A: mint to the zero address");
 // We know if the first token in the batch doesn't exist, the other ones don't as well, because of serial ordering.
 require(!_exists(startTokenId), "ERC721A: token already minted");
 require(quantity <= maxBatchSize, "ERC721A: quantity to mint too high");
+require(tx.origin == msg.sender, "The caller is another contract");
 
 _beforeTokenTransfers(address(0), to, startTokenId, quantity);
 
@@ -1733,7 +1734,7 @@ mintToAdmin(_addresses[i]);
 function mintToMultiple(address _to, uint256 _amount) public payable {
 require(_amount >= 1, "Must mint at least 1 token");
 require(mintingOpen == true, "Minting is not open right now!");
-if(currentTokenId() <= 10) {
+if(currentTokenId() <= 200) {
     require(_amount == 1, "Only one free mint.");
     require(msg.value == 0, "You made it to the free mint!");
     require(_numberMinted(msg.sender) == 0, "Only one free mint.");
