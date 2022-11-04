@@ -65,6 +65,13 @@ body {
   cursor:url('https://raw.githubusercontent.com/CopeBears/testupload/main/bulletbillsmall-removebg-preview.png');
 }
 
+/* .totalPrice {
+  display: inline;
+  background-color: #FFAA3B;
+  box-shadow: 1em 0 0 #FFAA3B, -1em 0 0 #FFAA3B;
+  padding: 0.5em 0em;
+  box-decoration-break: clone;
+} */
 /* HEADER */
 
 header {
@@ -138,7 +145,6 @@ p {
   height: 100%;
   cursor:url('https://raw.githubusercontent.com/CopeBears/testupload/main/bulletbillsmall-removebg-preview.png');
 }
-
 
 
 .countdown ul {

@@ -98,7 +98,7 @@
 
     <div>
       <video id="movie" controls autoplay muted style="object-fit: fill;">
-        <source src="movie.mp4" type="video/mp4">
+        <source  src="movie.mp4" type="video/mp4">
       </video>
     </div>
 
@@ -144,7 +144,7 @@
 
         <div class="total-price-container">
           <!-- <h3>Total</h3> -->
-          <p id="totalPrice" style="font-size: 30px">.01 ETH</p>
+          <button type="mintButton" id="totalPrice">.03 ETH</button>
         </div>
 
             <span>
@@ -182,10 +182,10 @@
         </a>
       </div>
       <h1>&nbsp;</h1>
-
+      <h1>&nbsp;</h1>
     </section>  
     <h1>&nbsp;</h1>
-
+    <h1>&nbsp;</h1>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
@@ -206,6 +206,11 @@
     d.width = document.body.clientWidth*.33
     d.height = document.body.clientHeight*.50
 
+
+    if (document.body.clientWidth<1000) {
+      console.log('hi')
+    }
+
     var d = document.getElementById('animate');
     d.style.position = "absolute";
     d.style.left = -document.body.clientWidth*.15+'px';
@@ -216,8 +221,8 @@
 
     var d = document.getElementById('animateImg2');
 
-    d.width = document.body.clientWidth*.08
-    d.height = document.body.clientHeight*.12
+    d.width = document.body.clientWidth*.06
+    d.height = document.body.clientWidth*.08
 
     
     var d = document.getElementById('yoshi');
@@ -247,7 +252,7 @@
     <script>
       var d = document.getElementById('animate2');
       d.style.position = "absolute";
-      d.style.left = document.body.clientWidth*.11+'px';
+      d.style.left = document.body.clientWidth*.12+'px';
       d.style.top = document.body.clientWidth*.1+'px';
 
       for(i=0; i<1000; i+=1) {
@@ -281,11 +286,11 @@
         var d = document.getElementById('animate3');
         d.style.position = "absolute";
         d.style.left = document.body.clientWidth*.35+'px';
-        d.style.top = document.body.clientHeight*.88+'px';
+        d.style.top = document.body.clientHeight*.85+'px';
         
           setTimeout(() => {
-            document.getElementById("peach").width = document.body.clientWidth*.14;
-            document.getElementById("peach").height = document.body.clientHeight*.15;
+            document.getElementById("peach").width = document.body.clientWidth*.12;
+            document.getElementById("peach").height = document.body.clientWidth*.12;
             for(i=0; i<1000; i+=1) {
               $(document).ready(function(e) {
                   var width = "-=" + 50;
