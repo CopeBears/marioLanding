@@ -235,6 +235,16 @@ p {
   cursor:url('https://raw.githubusercontent.com/CopeBears/testupload/main/bulletbillsmall-removebg-preview.png');
 }
 
+.priceContainer{
+  background-color: #6a98ec; /* Green */
+  color: rgb(3, 2, 2);
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26px;
+  cursor:url('https://raw.githubusercontent.com/CopeBears/testupload/main/bulletbillsmall-removebg-preview.png');
+}
 .fullWrapper {
   cursor:url('https://raw.githubusercontent.com/CopeBears/testupload/main/bulletbillsmall-removebg-preview.png');
 }

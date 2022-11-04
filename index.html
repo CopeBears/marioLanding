@@ -142,12 +142,12 @@
           </li>
         </ul>
 
-        <div class="total-price-container">
+        <div class="priceContainer">
           <!-- <h3>Total</h3> -->
-          <button type="mintButton" id="totalPrice">.03 ETH</button>
+          <button id="totalPrice" class="priceContainer" font-size="30px">.03 ETH</button>
         </div>
 
-            <span>
+            <span>             
               <button class="input-number-decrement btn" id="mintDecrement">–</button>
               <input
                 id="mintInput"
@@ -155,12 +155,14 @@
                 type="number"
                 value="1"
                 min="1"
-                max="20"
+                max="5"
               />
+              
               <button class="input-number-increment btn" id="mintIncrement">+</button>
             </span>
             <button id="setQtyMax" class="btn">SET MAX</button>
           </div>
+          <h3>&nbsp;</h3>
           <button id="mintButton" class="hero-btn btn mint-btn">Mint</button> 
       </div>
       </div>
